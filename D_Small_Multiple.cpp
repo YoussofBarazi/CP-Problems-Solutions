@@ -1,0 +1,76 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define vi vector<int>
+#define vl vector<ll>
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define pb push_back
+#define F first
+#define S second
+#define all(v) v.begin(), v.end()
+#define allr(v) v.rbegin(), v.rend()
+#define IOS                  \
+    ios::sync_with_stdio(0); \
+    cin.tie(0);              \
+    cout.tie(0);
+using namespace std;
+
+int dx[] = {-1 , 0 , 1 , 0};
+int dy[] = {0 , 1 , 0 , -1};
+
+const int N = 200009;
+
+void solve()
+{
+    ll k;
+    cin >> k;
+
+    vector <int> dist(k , 1e9);
+
+    deque <int> q;
+    q.push_back(1);
+    dist[1] = 1;
+
+    while (!q.empty())
+    {
+        int cur = q.front();
+        q.pop_front();
+
+        int c1 = cur * 10 % k;
+
+        if (dist[c1] > dist[cur])
+            dist[c1] = dist[cur] , q.push_front(c1);
+        
+        int c2 = (cur + 1) % k;
+
+        if (dist[c2] > 1 + dist[cur])
+            dist[c2] = dist[cur] + 1 , q.push_back(c2); 
+    }
+
+    cout << dist[0] << endl;
+}
+
+int main()
+{
+    // IO("name");
+    IOS;
+
+    int t = 1;
+
+    while (t--)
+    {
+        solve();
+    }
+
+    return 0;
+}
+
+void IO(string name = "") {
+
+	cin.tie(0)->sync_with_stdio(0);
+	if (name.size()) {
+		freopen((name + ".in").c_str(), "r", stdin);
+		freopen((name + ".out").c_str(), "w", stdout);
+	}
+
+}
