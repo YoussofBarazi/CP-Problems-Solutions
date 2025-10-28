@@ -1,1 +1,0 @@
-{"name":"Local: newA","url":"a:\\solution\\newA.cpp","tests":[{"id":1718379403500,"input":"4\n6 7 4 5\n2\n3 3\n1 2","output":"YES\nNO"},{"id":1718379421351,"input":"2\n1 2\n1\n1 2","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"a:\\solution\\newA.cpp","group":"local","local":true}
