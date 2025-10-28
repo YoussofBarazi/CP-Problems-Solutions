@@ -1,1 +1,4 @@
-.cph
+/.cph
+/.cph/*
+*.exe
+*.o
